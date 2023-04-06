@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Plugin Framework QA</title>
+        <script src="https://embed.sandbox.array.io/cms/array-web-component.js"></script>
+  <script src="https://embed.sandbox.array.io/cms/array-account-enroll.js?appKey=88318B17-56EB-4C84-8905-3E7FDA7DBA46"></script>
         <style>
             body {
                 background-color: lightblue;
@@ -15,20 +17,20 @@
                 flex-direction: column;
                 font-size: 16px;
             }
-    .select-container {
+    .select-container-test {
         display: flex;
         flex-direction: column;
     }
-    .select-wrapper {
+    .select-wrapper-test {
         display: inline-block;
         position: relative;
     }
-    .values {
+    .values-test {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .open-icon {
+    .open-icon-test {
         position: absolute;
         left: 0px;
         display: flex;
@@ -37,7 +39,7 @@
         width: 100%;
         pointer-events: none;
     }
-    .arr-select {
+    .arr-select-test {
         border-width: 1px;
         border-style: solid;
         border-color: rgba(215,222,228,1);
@@ -50,7 +52,7 @@
         width: 200px;
         height: 42px;
     }
-    select {
+    select.test {
         /* Magic here: hide the default arrow */
         appearance: none;
         padding-right: 23px; /* prevent text from overlapping the arrow */
@@ -63,11 +65,11 @@
         box-sizing: border-box;
         line-height: 1.15;
     }
-    select:focus,
-    select:focus-visible {
+    select.test:focus,
+    select.test:focus-visible {
         outline: none;
     }
-    option {
+    option.test {
         color: rgba(51,51,51,1);
         min-height: 1.2em;
         padding: 0px 2px 1px;
@@ -75,11 +77,11 @@
     }
 
   @media (prefers-color-scheme: dark) {
-    .arr-select {
+    .arr-select-test {
         background-color: #5a5d65;
         color: white;
     }
-    option {
+    option.test {
         color: white;
     }
     body {
@@ -90,21 +92,22 @@
     </style>
     </head>
     <body>
+     
         <p>Test Text Here</p>
-        <div class="select-container">
+        <div class="select-container-test">
           
-            <div class="select-wrapper">
+            <div class="select-wrapper-test">
               <div
-                class="values arr-select"
+                class="values-test arr-select-test"
               >
-                <select>
-                  <option role="listitem" value="alabama">alabama</option>
-                  <option role="listitem" value="california">california</option>
-                  <option role="listitem" value="nevada">nevada</option>
-                  <option role="listitem" value="wisconsin">wisconsin</option>
+                <select class="test">
+                  <option class="test" role="listitem" value="alabama">alabama</option>
+                  <option class="test" role="listitem" value="california">california</option>
+                  <option class="test" role="listitem" value="nevada">nevada</option>
+                  <option class="test" role="listitem" value="wisconsin">wisconsin</option>
                 </select>
           
-                <span class="open-icon">
+                <span class="open-icon-test">
                     <svg
                     width="24"
                     height="24"
@@ -123,5 +126,9 @@
               </div>
             </div>
           </div>
+          <array-account-enroll
+          appKey="88318B17-56EB-4C84-8905-3E7FDA7DBA46"
+          sandbox="true"
+        />
     </body>
 </html>
