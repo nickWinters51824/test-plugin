@@ -1,23 +1,127 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Plugin Framework QA</title>
-    <style>
-        body {
-        background-color: lightblue;
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Plugin Framework QA</title>
+        <style>
+            body {
+                background-color: lightblue;
+                display: flex;
+                height: 100vh;
+                width: 100vw;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-size: 16px;
+            }
+    .select-container {
         display: flex;
-        height: 100vh;
-        width: 100vw;
+        flex-direction: column;
+    }
+    .select-wrapper {
+        display: inline-block;
+        position: relative;
+    }
+    .values {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;;
-        }
+    }
+    .open-icon {
+        position: absolute;
+        left: 0px;
+        display: flex;
+        justify-content: flex-end;
+        padding: var(--select-padding);
+        width: 100%;
+        pointer-events: none;
+    }
+    .arr-select {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(215,222,228,1);
+        border-radius: var(--select-radius);
+        background: white;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: rgba(51,51,51,1);
+        padding: 8px 12px;
+        width: 200px;
+        height: 42px;
+    }
+    select {
+        /* Magic here: hide the default arrow */
+        appearance: none;
+        padding-right: 23px; /* prevent text from overlapping the arrow */
+        width: 100%;
+        height: 42px;
+        border: 0px;
+        background-color: inherit;
+        color: inherit;
+        font-weight: inherit;
+        box-sizing: border-box;
+        line-height: 1.15;
+    }
+    select:focus,
+    select:focus-visible {
+        outline: none;
+    }
+    option {
+        color: rgba(51,51,51,1);
+        min-height: 1.2em;
+        padding: 0px 2px 1px;
+        display: block;
+    }
+
+  @media (prefers-color-scheme: dark) {
+    .arr-select {
+        background-color: #5a5d65;
+        color: white;
+    }
+    option {
+        color: white;
+    }
+    body {
+        background-color: darkslateblue;
+        color: white;
+    }
+  }
     </style>
     </head>
     <body>
-    <div> 
-        <p>Hi <%= given_name %>, you have <b><%= accounts_count %></b> accounts</p>
-    </div>
+        <p>Test Text Here</p>
+        <div class="select-container">
+          
+            <div class="select-wrapper">
+              <div
+                class="values arr-select"
+              >
+                <select>
+                  <option role="listitem" value="alabama">alabama</option>
+                  <option role="listitem" value="california">california</option>
+                  <option role="listitem" value="nevada">nevada</option>
+                  <option role="listitem" value="wisconsin">wisconsin</option>
+                </select>
+          
+                <span class="open-icon">
+                    <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        fill="#3E3F42"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M7.28501 8.37183L6 9.65684L11.3579 15.0148L12 15.6283L12.6421 15.0148L18 9.65684L16.7159 8.37272L12.0009 13.0877L7.28501 8.37183Z"
+                    />
+                </svg>
+                </span>
+              </div>
+            </div>
+          </div>
     </body>
 </html>

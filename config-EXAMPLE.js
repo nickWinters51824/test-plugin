@@ -3,6 +3,6 @@ module.exports = {
     api: {
         environment: 'https://digital.garden-fi.com',
         client_id: '',
-        client_secret: ''
+        client_secret: '',
     }
 }
